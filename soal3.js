@@ -11,7 +11,7 @@ function perjumlahan(a, b) {
     });
   }
 
-  const num1 = 5;
+  const num1 = "5";
   const num2 = 10;
 
   perjumlahan(num1, num2)

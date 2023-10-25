@@ -1,17 +1,13 @@
-const cobaFetch = async () => {
-  const url = "https://jsonplaceholder.typicode.com/users";
-  let link = await fetch(url);
-  let text = await link.json();
-  return text;
-};
+const cariNama = async () => {
+  try {
+      let response = await fetch("https://jsonplaceholder.typicode.com/users");
+      let data = await response.json();
+      data.map((item) => {
+          console.log(item.name);
+      });
+  } catch (error) {
+      console.error(`Error to get name: ${error}`);
+  }
+}
 
-cobaFetch()
-.then((data) => {
-  data.map((hasil) => {
-    console.log(hasil.name);
-  });
-})
-
-.catch((err)=>{
-    console.log(err);
-});
+cariNama();
